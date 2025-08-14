@@ -120,8 +120,12 @@ export default function Footer() {
         <div>
           <div>
             <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-              <p className="text-gray-300 text-sm text-center sm:text-left">© 2024 AOT —
+              <p className="text-gray-300 text-sm text-center sm:text-left">
+                2024 AOT —
                 <a rel="noopener noreferrer" className="text-gray-300 ml-1" target="_blank">@aot</a>
+                <span className="block sm:inline mt-1 sm:mt-0 sm:ml-2">
+                  Designed by <a href="#" className="text-gray-300 hover:text-white font-medium">G-Tech Solutions</a>
+                </span>
               </p>
               <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
                 <a className="text-gray-300" href='https://m.facebook.com/profile.php?id=100067475193505&name=xhp_nt_' target='_blank'>
