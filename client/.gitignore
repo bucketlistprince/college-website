@@ -17,8 +17,8 @@
 /build
 
 # environment variables
-.env.local
-.env*.local
+# .env.local
+# .env*.local
 
 # misc
 .DS_Store
@@ -41,3 +41,4 @@ next-env.d.ts
 
 
 # .env
+.vercel
