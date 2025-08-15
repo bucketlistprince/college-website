@@ -8,10 +8,18 @@ import { AuthUserProvider } from "@/context/auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Derive a safe absolute base URL for metadata. Prevents `new URL(undefined)` at build time.
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASEURL && /^https?:\/\//.test(process.env.NEXT_PUBLIC_BASEURL)
+    ? process.env.NEXT_PUBLIC_BASEURL
+    : (process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : 'http://localhost:3000');
+
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASEURL),
+  metadataBase: new URL(baseUrl),
   title: 'Academy of Technology',
-  description: 'Academy of Technology',
+  description: 'Discover the Academy of Technology, a leading institution offering innovative programs, cutting-edge research, and a vibrant community. Explore our website to learn more about our admissions, departments, events, and resources.',
   generator: 'Next.js',
   applicationName: 'Academy of Technology',
   referrer: 'origin-when-cross-origin',
@@ -33,7 +41,7 @@ export const metadata = {
 
   openGraph: {
     title: 'Academy of Technology',
-    description: 'Academy of Technology',
+    description: 'Official website of Academy of Technology — explore programs, admissions, departments, events, highlights, and resources for students, faculty, and visitors.',
     url: '/logo.jpeg',
     siteName: 'Academy of Technology',
     images: [
